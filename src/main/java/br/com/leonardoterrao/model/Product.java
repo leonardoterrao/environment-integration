@@ -8,19 +8,20 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigInteger;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Client {
+public class Product {
 
     @Id
     @GeneratedValue
     private Long id;
-    private String name;
-    private Gender gender = Gender.UNINFORMED;
-    private String email;
+    private String description;
+    private BigInteger price;
+    private int stockLevel;
 
 }

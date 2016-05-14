@@ -6,10 +6,6 @@ public class SaleRepository extends Repository<Sale> {
 
     private static SaleRepository saleRepository;
 
-    private SaleRepository() {
-        super(Sale.class);
-    }
-
     public static SaleRepository getInstance() {
         if (saleRepository == null) {
             saleRepository = new SaleRepository();

@@ -9,10 +9,6 @@ public class ClientRepository extends Repository<Client> {
 
     private static ClientRepository clientRepository;
 
-    private ClientRepository() {
-        super(Client.class);
-    }
-
     public static ClientRepository getInstance() {
         if (clientRepository == null) {
             clientRepository = new ClientRepository();

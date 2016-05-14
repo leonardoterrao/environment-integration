@@ -4,14 +4,16 @@ import br.com.leonardoterrao.configuration.HibernateUtil;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 public class Repository<T> {
 
     private final Class<T> type;
 
-    protected Repository(Class<T> type) {
-        this.type = type;
+    Repository() {
+        this.type = (Class<T>) ((ParameterizedType) getClass()
+                .getGenericSuperclass()).getActualTypeArguments()[0];
     }
 
     private Class<T> getMyType() {

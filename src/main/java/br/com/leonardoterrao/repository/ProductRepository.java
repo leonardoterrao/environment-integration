@@ -10,10 +10,6 @@ public class ProductRepository extends Repository<Product> {
 
     private static ProductRepository productRepository;
 
-    private ProductRepository() {
-        super(Product.class);
-    }
-
     public static ProductRepository getInstance() {
         if (productRepository == null) {
             productRepository = new ProductRepository();

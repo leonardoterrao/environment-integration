@@ -5,7 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +23,13 @@ public class Sale {
     @Id
     @GeneratedValue
     private Long id;
-    private LocalDateTime time;
+
+    private LocalDateTime dateTime;
+
     @ManyToOne
     private Client client;
-    @OneToMany
-    private List<Product> products = new ArrayList<Product>();
+
+    @ManyToOne
+    private List<Item> items = new ArrayList<Item>();
 
 }

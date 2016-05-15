@@ -15,6 +15,10 @@ public class ClientEnvironemnt extends Environment {
         clientRepository.persist(buildClient("Shiba Safadão", "shiba_safadao_show_2013@bol.com", Gender.MALE));
     }
 
+    public void thirdPerson() {
+        clientRepository.persist(buildClient("Jurislvalda", "jurislvalda@hotmail.com", Gender.FEMALE));
+    }
+
     private Client buildClient(String name, String email, Gender gender) {
         return Client.builder().name(name).email(email).gender(gender).build();
     }

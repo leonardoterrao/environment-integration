@@ -4,7 +4,9 @@ import br.com.lemao.environment.annotation.GivenEnvironment;
 import br.com.lemao.environment.annotation.IgnoreEnvironment;
 import br.com.leonardoterrao.model.Client;
 import br.com.leonardoterrao.environment.client.ClientEnvironemnt;
+import br.com.leonardoterrao.model.Gender;
 import br.com.leonardoterrao.repository.br.com.leonardoterrao.junit.TransactionRule;
+import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -25,21 +27,34 @@ public class ClientRepositoryTest {
     @IgnoreEnvironment
     public void findAllWithoutEnvironment() throws Exception {
         List<Client> clients = clientRepository.findAll();
-        assertThat(0, is(clients.size()));
+        assertThat(clients, is(Matchers.empty()));
     }
 
     @Test
     public void findAllWihEnvironment() throws Exception {
         List<Client> clients = clientRepository.findAll();
-        assertThat(2, is(clients.size()));
+        assertThat(clients.size(), is(2));
     }
 
     @Test
     public void findByName() throws Exception {
-        Client client = clientRepository.find("Leonardo");
+        Client leonardo = clientRepository.find("Leonardo");
 
-        assertThat("Leonardo", is(client.getName()));
-        assertThat("leonardoterrao@gmail.com", is(client.getEmail()));
+        assertThat(leonardo.getName(), is("Leonardo"));
+        assertThat(leonardo.getEmail(), is("leonardoterrao@gmail.com"));
+
+        Client jurislvalda = clientRepository.find("Jurislvalda");
+        assertThat(jurislvalda, is(Matchers.nullValue()));
+    }
+
+    @Test
+    @GivenEnvironment(value = ClientEnvironemnt.class, environmentName = "thirdPerson")
+    public void findByNameInOtherEnvironment() throws Exception {
+        Client client = clientRepository.find("Jurislvalda");
+
+        assertThat(client.getName(), is("Jurislvalda"));
+        assertThat(client.getEmail(), is("jurislvalda@hotmail.com"));
+        assertThat(client.getGender(), is(Gender.FEMALE));
     }
 
 }

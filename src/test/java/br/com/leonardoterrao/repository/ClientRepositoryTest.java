@@ -31,6 +31,15 @@ public class ClientRepositoryTest {
     }
 
     @Test
+    public void remove() throws Exception {
+        Client leonardo = clientRepository.find("Leonardo");
+        clientRepository.remove(leonardo);
+
+        final List<Client> clients = clientRepository.findAll();
+        assertThat(clients.size(), is(1));
+    }
+
+    @Test
     public void findAllWihEnvironment() throws Exception {
         List<Client> clients = clientRepository.findAll();
         assertThat(clients.size(), is(2));

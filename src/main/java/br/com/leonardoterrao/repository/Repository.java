@@ -24,6 +24,10 @@ public class Repository<T> {
         HibernateUtil.getCurrentSession().persist(object);
     }
 
+    public void remove(T object) {
+        HibernateUtil.getCurrentSession().delete(object);
+    }
+
     public List<T> findAll() {
         Criteria criteria = HibernateUtil.getCurrentSession().createCriteria(getMyType());
         List<T> all = criteria.list();

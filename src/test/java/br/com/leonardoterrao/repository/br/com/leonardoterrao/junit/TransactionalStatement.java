@@ -1,7 +1,7 @@
 package br.com.leonardoterrao.repository.br.com.leonardoterrao.junit;
 
 import br.com.leonardoterrao.configuration.HibernateUtil;
-import br.com.leonardoterrao.junit.EnvironmentStatement;
+import br.com.leonardoterrao.environment.configuration.EnvironmentStatement;
 import org.hibernate.Transaction;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;

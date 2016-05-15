@@ -1,4 +1,4 @@
-package br.com.leonardoterrao.junit;
+package br.com.leonardoterrao.environment.configuration;
 
 import br.com.lemao.environment.Environment;
 import br.com.lemao.environment.annotation.GivenEnvironment;

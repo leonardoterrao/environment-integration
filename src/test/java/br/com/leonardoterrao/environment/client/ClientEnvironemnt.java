@@ -1,4 +1,4 @@
-package br.com.leonardoterrao.repository.br.com.leonardoterrao.environment.client;
+package br.com.leonardoterrao.environment.client;
 
 import br.com.lemao.environment.Environment;
 import br.com.leonardoterrao.model.Client;

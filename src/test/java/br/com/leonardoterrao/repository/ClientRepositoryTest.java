@@ -3,7 +3,7 @@ package br.com.leonardoterrao.repository;
 import br.com.lemao.environment.annotation.GivenEnvironment;
 import br.com.lemao.environment.annotation.IgnoreEnvironment;
 import br.com.leonardoterrao.model.Client;
-import br.com.leonardoterrao.repository.br.com.leonardoterrao.environment.client.ClientEnvironemnt;
+import br.com.leonardoterrao.environment.client.ClientEnvironemnt;
 import br.com.leonardoterrao.repository.br.com.leonardoterrao.junit.TransactionRule;
 import org.junit.Rule;
 import org.junit.Test;

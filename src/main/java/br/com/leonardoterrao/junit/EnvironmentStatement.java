@@ -2,6 +2,7 @@ package br.com.leonardoterrao.junit;
 
 import br.com.lemao.environment.Environment;
 import br.com.lemao.environment.annotation.GivenEnvironment;
+import br.com.lemao.environment.annotation.IgnoreEnvironment;
 import br.com.lemao.environment.exception.AfterEnvironmentException;
 import br.com.lemao.environment.exception.EnvironmentException;
 import br.com.lemao.environment.exception.EnvironmentNotImplementedException;
@@ -23,7 +24,7 @@ public class EnvironmentStatement extends Statement {
     protected void before() {
         GivenEnvironment givenEnvironment = getGivenEnvironmentAnnotation();
 
-        if (givenEnvironment == null || getGivenEnvironmentAnnotation() != null) {
+        if (givenEnvironment == null || getIgnoreEnvironmentAnnotation() != null) {
             return;
         }
 
@@ -55,8 +56,9 @@ public class EnvironmentStatement extends Statement {
         }
     }
 
-    private Environment getEnvironmentInstance(Class<? extends Environment> environmentClass) throws Exception {
-        return environmentClass.newInstance();
+    private void beforeRun(GivenEnvironment givenEnvironment) throws Exception {
+        Class<? extends Environment> environmentClass = givenEnvironment.value();
+        environmentClass.newInstance().beforeRun();
     }
 
     private void afterRun(GivenEnvironment givenEnvironment) {
@@ -68,9 +70,12 @@ public class EnvironmentStatement extends Statement {
         }
     }
 
-    private void beforeRun(GivenEnvironment givenEnvironment) throws Exception {
-        Class<? extends Environment> environmentClass = givenEnvironment.value();
-        environmentClass.newInstance().beforeRun();
+    private Environment getEnvironmentInstance(Class<? extends Environment> environmentClass) throws Exception {
+        return environmentClass.newInstance();
+    }
+
+    public IgnoreEnvironment getIgnoreEnvironmentAnnotation() {
+        return description.getAnnotation(IgnoreEnvironment.class);
     }
 
     private GivenEnvironment getGivenEnvironmentAnnotation() {
@@ -95,4 +100,5 @@ public class EnvironmentStatement extends Statement {
         }
 
     }
+
 }

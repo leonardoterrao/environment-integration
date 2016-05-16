@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 public class ProductEnvironment extends Environment {
 
-    public ProductRepository productRepository = ProductRepository.getInstance();
+    private ProductRepository productRepository = ProductRepository.getInstance();
 
     public static final String PRODUCT_ONE = "Product One";
     public static final String PRODUCT_TWO = "Product Two";

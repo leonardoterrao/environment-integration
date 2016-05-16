@@ -22,8 +22,8 @@ public class SaleRepositoryTest {
     @Rule
     public TransactionRule ruleTransaction = new TransactionRule();
 
-    SaleRepository saleRepository = SaleRepository.getInstance();
-    ProductRepository productRepository = ProductRepository.getInstance();
+    private SaleRepository saleRepository = SaleRepository.getInstance();
+    private ProductRepository productRepository = ProductRepository.getInstance();
 
     @Test
     public void findAllWihEnvironment() throws Exception {

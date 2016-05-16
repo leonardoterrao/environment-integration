@@ -9,7 +9,7 @@ import br.com.leonardoterrao.repository.ClientRepository;
 
 public class ClientEnvironemnt extends Environment {
 
-    public ClientRepository clientRepository = ClientRepository.getInstance();
+    private ClientRepository clientRepository = ClientRepository.getInstance();
 
     public static final String CLIENTE_LEONARDO = "Leonardo";
 

@@ -16,9 +16,9 @@ import java.util.Arrays;
 
 public class SaleEnvironment extends Environment {
 
-    public SaleRepository saleRepository = SaleRepository.getInstance();
-    public ClientRepository clientRepository = ClientRepository.getInstance();
-    public ProductRepository productRepository = ProductRepository.getInstance();
+    private SaleRepository saleRepository = SaleRepository.getInstance();
+    private ClientRepository clientRepository = ClientRepository.getInstance();
+    private ProductRepository productRepository = ProductRepository.getInstance();
 
     @Override
     @GivenEnvironment(ClientEnvironemnt.class)

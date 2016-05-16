@@ -15,8 +15,6 @@ public class SaleRepository extends Repository<Sale> {
         return saleRepository;
     }
 
-    private ProductRepository productRepository = ProductRepository.getInstance();
-
     @Override
     public void persist(Sale sale) {
         for (Item item : sale.getItems()) {

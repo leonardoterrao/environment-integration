@@ -1,19 +1,17 @@
 package br.com.leonardoterrao.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.math.BigInteger;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 public class Product {
 
@@ -21,7 +19,7 @@ public class Product {
     @GeneratedValue
     private Long id;
     private String description;
-    private BigInteger price;
+    private BigDecimal price;
     private int stockLevel;
 
 }

@@ -1,7 +1,6 @@
 package br.com.leonardoterrao.repository;
 
 import br.com.leonardoterrao.configuration.HibernateUtil;
-import br.com.leonardoterrao.model.Client;
 import br.com.leonardoterrao.model.Product;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -18,10 +17,10 @@ public class ProductRepository extends Repository<Product> {
         return productRepository;
     }
 
-    public Client find(String description) {
+    public Product find(String description) {
         Criteria criteria = HibernateUtil.getCurrentSession().createCriteria(Product.class);
         criteria.add(Restrictions.eq("description", description));
-        return (Client) criteria.uniqueResult();
+        return (Product) criteria.uniqueResult();
     }
 
 }

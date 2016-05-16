@@ -20,6 +20,7 @@
 		<mapping class="br.com.leonardoterrao.model.Client" />
 		<mapping class="br.com.leonardoterrao.model.Sale" />
 		<mapping class="br.com.leonardoterrao.model.Product" />
+		<mapping class="br.com.leonardoterrao.model.Item" />
 
 	</session-factory>
 </hibernate-configuration>

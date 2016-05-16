@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +26,7 @@ public class Sale {
     @ManyToOne
     private Client client;
 
-    @ManyToOne
-    private List<Item> items = new ArrayList<Item>();
+    @OneToMany
+    private List<Item> items = new ArrayList<>();
 
 }

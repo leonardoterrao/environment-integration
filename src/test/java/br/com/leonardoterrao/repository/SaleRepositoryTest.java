@@ -6,7 +6,7 @@ import br.com.leonardoterrao.environment.product.ProductEnvironment;
 import br.com.leonardoterrao.environment.sale.SaleEnvironment;
 import br.com.leonardoterrao.model.Product;
 import br.com.leonardoterrao.model.Sale;
-import br.com.leonardoterrao.repository.br.com.leonardoterrao.junit.TransactionRule;
+import br.com.leonardoterrao.environment.configuration.TransactionRule;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;

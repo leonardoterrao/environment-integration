@@ -4,7 +4,7 @@ import br.com.lemao.environment.annotation.GivenEnvironment;
 import br.com.lemao.environment.annotation.IgnoreEnvironment;
 import br.com.leonardoterrao.environment.product.ProductEnvironment;
 import br.com.leonardoterrao.model.Product;
-import br.com.leonardoterrao.repository.br.com.leonardoterrao.junit.TransactionRule;
+import br.com.leonardoterrao.environment.configuration.TransactionRule;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;

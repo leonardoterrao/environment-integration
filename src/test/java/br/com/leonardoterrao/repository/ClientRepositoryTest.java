@@ -5,7 +5,7 @@ import br.com.lemao.environment.annotation.IgnoreEnvironment;
 import br.com.leonardoterrao.model.Client;
 import br.com.leonardoterrao.environment.client.ClientEnvironemnt;
 import br.com.leonardoterrao.model.Gender;
-import br.com.leonardoterrao.repository.br.com.leonardoterrao.junit.TransactionRule;
+import br.com.leonardoterrao.environment.configuration.TransactionRule;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;

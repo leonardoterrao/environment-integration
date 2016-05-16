@@ -45,7 +45,7 @@
         </dependency>
         <dependency>
             <groupId>br.com.lemao</groupId>
-            <artifactId>environment</artifactId>
+            <artifactId>environment-junit</artifactId>
             <version>1.0</version>
             <scope>test</scope>
         </dependency>

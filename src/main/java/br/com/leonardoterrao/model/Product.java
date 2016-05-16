@@ -22,4 +22,7 @@ public class Product {
     private BigDecimal price;
     private int stockLevel;
 
+    public void decraseStock(Integer quantity) {
+        stockLevel = stockLevel - quantity;
+    }
 }

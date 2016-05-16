@@ -1,5 +1,6 @@
 package br.com.leonardoterrao.repository;
 
+import br.com.leonardoterrao.model.Item;
 import br.com.leonardoterrao.model.Sale;
 
 public class SaleRepository extends Repository<Sale> {
@@ -14,4 +15,14 @@ public class SaleRepository extends Repository<Sale> {
         return saleRepository;
     }
 
+    private ProductRepository productRepository = ProductRepository.getInstance();
+
+    @Override
+    public void persist(Sale sale) {
+        for (Item item : sale.getItems()) {
+            item.getProduct().decraseStock(item.getQuantity());
+        }
+
+        super.persist(sale);
+    }
 }

@@ -1,9 +1,6 @@
 package br.com.leonardoterrao.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -14,6 +11,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 public class Sale {
 
@@ -21,12 +19,12 @@ public class Sale {
     @GeneratedValue
     private Long id;
 
-    private LocalDateTime dateTime;
+    private LocalDateTime dateTime = LocalDateTime.now();
 
     @ManyToOne
     private Client client;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Item> items = new ArrayList<>();
 
 }

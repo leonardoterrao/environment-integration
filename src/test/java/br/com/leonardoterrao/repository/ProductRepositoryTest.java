@@ -2,7 +2,7 @@ package br.com.leonardoterrao.repository;
 
 import br.com.lemao.environment.annotation.GivenEnvironment;
 import br.com.lemao.environment.annotation.IgnoreEnvironment;
-import br.com.leonardoterrao.environment.br.com.leonardoterra.environment.product.ProductEnvironment;
+import br.com.leonardoterrao.environment.product.ProductEnvironment;
 import br.com.leonardoterrao.model.Product;
 import br.com.leonardoterrao.repository.br.com.leonardoterrao.junit.TransactionRule;
 import org.hamcrest.Matchers;

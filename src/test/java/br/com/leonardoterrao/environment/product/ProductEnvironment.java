@@ -1,4 +1,4 @@
-package br.com.leonardoterrao.environment.br.com.leonardoterra.environment.product;
+package br.com.leonardoterrao.environment.product;
 
 import br.com.lemao.environment.Environment;
 import br.com.leonardoterrao.model.Product;

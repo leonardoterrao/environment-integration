@@ -1,4 +1,4 @@
-# Testes de integração utlizando [Environments](https://github.com/angeliferreira/environment-core)
+# Testes de integração utilizando [Environments](https://github.com/angeliferreira/environment-core)
 
 Estou construindo neste projeto um exemplo de teste de integração utilizando a ferramenta https://github.com/angeliferreira/environment-core
 
